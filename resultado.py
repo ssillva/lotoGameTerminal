@@ -1,10 +1,16 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from downloads import Downloads
-from htmlcsv import html2csv
-import sys, os.path, glob
-import zipfile, csv, sqlite3
+import csv
+import glob
+import os.path
+import sqlite3
+import sys
+import zipfile
+
+from dados.downloads import Downloads
+from dados.htmlcsv import html2csv
+
 
 class Resultados(object):
 
