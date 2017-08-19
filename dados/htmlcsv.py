@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import HTMLParser, re
 
 class html2csv(HTMLParser.HTMLParser):
