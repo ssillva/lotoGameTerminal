@@ -117,9 +117,16 @@ class Resultados(object):
 		# except sqlite3.IntegrityError:
 		#   print("Aviso: O email deve ser único.")
 		conexao.fechar_banco()
+	def organizarResultado(self):
+		''''''
+		self.descompactarArq()
+		self.salvarCSV()
+		self.schemaBD()
+		self.transfCsvForBd()
+
 	def atualizarResultado(self):
 		pass
-	def setUltimoResultado(self):
+	def setUltimoResultado(self, lista):
 		pass
 	def getUltimoResultado(self):
 		pass
