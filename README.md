@@ -1,4 +1,8 @@
 # lotoGameTerminal
+
+Projeto incompleto, apenas para testar as análise,
+sem organização
+
 Apostas
 print (" "*10 +"Opções do Sistema")
 
@@ -10,20 +14,31 @@ print "4 - Análises"
 print "\nOpções Resultados\n"
 
 print "1 - Baixar todos resultados da Lotomania"
+
 print "2 - Atualizar resultados da Lotomania"
+
 print "3 - Digitar ultimo resultados da Lotomania"
+
 print "4 - Alterar resultado da Lotomania"
+
 print "5 - Excluir Resultado Lotomania"
 
 print "\nOpções Estatísticas\n"
 
 print "par / impar - verificar a probabilidade de sair par ou impar"
+
 print "numeros primos"
+
 print "multiplos de 4"
+
 print "dezenas repetidas dos concursos anteriores analisados"
+
 print "Grupos Par/Par, Par/Impar, Impar/Par, Impar/Impar"
+
 print "separar dentro dos grupos em soma dos algarismos e verificar os multiplos de 4 e numeros primos dentro dos grupos"
+
 print "a posição das dezenas sorteadas no quadrante oposto quase não se repetem no proximo concurso"
+
 print "numeros inversos vem 3 ou 4 das dezenas sorteadas no concurso anterior"
 
 print "Qual meu espaço amostral: S = {1..100}"

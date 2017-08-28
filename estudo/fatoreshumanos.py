@@ -4,6 +4,6 @@ print "importancia fatores humanos IHC"
 
 ini = timeit.time()
 print "sandro"
-final = time.time()
+final = timeit.time()
 
 print final - ini

@@ -129,8 +129,9 @@ class Resultados(object):
 	def setUltimoResultado(self, lista):
 		pass
 	def getUltimoResultado(self):
-		pass
+		conexao = ConexaoBD(self.bdArq)
+		conexao.consultarSorteio()
+		conexao.fechar_banco()
 if __name__ == '__main__':
 	teste = Resultados()
-	teste.schemaBD()
-	teste.transfCsvForBd()
+	teste.getUltimoResultado()

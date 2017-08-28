@@ -45,81 +45,11 @@ class ConexaoBD(object):
         self.direcionador.execute(sql, lista)
         self.commit_banco()
 
-'''
+    def consultarSorteio(self):
+        self.executaSQL("""
+        SELECT * FROM sorteio;
+        """)
 
-cur.execute(sql)
-# sentença SQL para inserir registros
-#inserir_de_csv('result.csv')"""
-reader = csv.reader(
-           open('/home/ssillva/PycharmProjects/loterias/sorteios/D_LOTMAN.csv', 'rt'), delimiter=',')
-#linha = (reader,)
-#for i in range (1, len(list)) try: print (list[i]) except ValueError: print("Error Value.") except indexError: print("Erorr index") except : print('error ')
-#reader = open('/home/ssillva/PycharmProjects/loterias/sorteios/D_LOTMAN.csv', 'rt')
-dados = []
-#c2=[]
-#print linha
-#for i in linha:
-#    print i
-
-for linha in reader:
-
-    if len(linha) <=2:
-        pass
-    else:
-        dados.append(linha)
-dado3=[]
-for i in dados:
-    dado3.append(i[:22])
-
-for linha in dado3:
-#    print linha
-    cur.execute(' INSERT INTO sorteio'\
-            '(concurso, data_concurso,dz1,dz2,dz3,dz4,dz5,dz6,dz7,dz8,dz9,dz10,dz11,dz12,'\
-            'dz13,dz14,dz15,dz16,dz17,dz18,dz19,dz20) VALUES'\
-            '(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ', linha)
-        # gravando no bd
-    con.commit()
-print("Dados importados do csv com sucesso.")
-   # except sqlite3.IntegrityError:
-     #   print("Aviso: O email deve ser único.")
-con.close()
-
-
-
-
-
-
-# Cria uma conexão e um cursor
-
-bdArq = os.path.join(self.caminho, 'loteria.db3')
-con = sqlite3.connect(bdArq)
-cur = con.cursor()
-sql = 'create table if not exists sorteio ' \
-      '(concurso integer primary key, ' \
-      'dezenas VARCHAR (150)); '
-
-cur.execute(sql)
-
-# sentença SQL para inserir registros
-arq = os.path.join(self.caminho, 'D_LOTMAN.csv')
-reader = csv.reader(
-	open(arq, 'rt'), delimiter=',')
-
-# reader = csv.DictReader(
-#	open(arq, 'rt'),['concurso'])
-
-dados = []
-
-for linha in reader:
-	if len(linha) <= 2:
-		pass
-	else:
-		dados.append(linha[:22])
-for i in dados:
-	cur.execute('INSERT INTO sorteio(concurso, dezenas) VALUES (?,?)', (int(i[0]), str(i[2:])))
-
-con.commit()
-print("Dados importados do csv com sucesso.")
-# except sqlite3.IntegrityError:
-#   print("Aviso: O email deve ser único.")
-con.close()'''
+        for linha in self.direcionador.fetchall():
+            a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v = linha
+            print a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v
