@@ -1,4 +1,4 @@
-# lotoGameTerminal
+# LotoGame Terminal
 
 Projeto incompleto, apenas para testar as análise,
 sem organização
@@ -13,7 +13,7 @@ print "4 - Análises"
 
 print "\nOpções Resultados\n"
 
-print "1 - Baixar todos resultados da Lotomania"
+print "1 - Baixar todos resultados da Lotomania" ok
 
 print "2 - Atualizar resultados da Lotomania"
 
@@ -43,6 +43,7 @@ print "numeros inversos vem 3 ou 4 das dezenas sorteadas no concurso anterior"
 
 print "Qual meu espaço amostral: S = {1..100}"
 print "Quais meus eventos? o que eu quero e o que não quero?"
+
 print "Obter numero par nos concursos de loteria"
 print "P(A) =  n(E) / n (S) ; probabilidade de A é igual numero elementos eventos dividido pela numero elementos espaço amostral"
 print "p = probabilidade que eu quero" \
@@ -54,3 +55,15 @@ print " eventos independentes: realização de eventos não afeta outro evento" 
       "arvore das possibilidades" \
       "2 elevado a n" \
       "eventos mutuamente exclusivos: P = p1 + p2 Ex: probabilidade de sair 2 ou 5 na jogada do dado"
+MOSTRAR CICLOS - Cada rodada de sorteio verificar as dezenas ques
+faltam sair, até que todas as dezenas tenham saído
+
+ANALISE - resultados, sorteios, dezenas e quadrantes
+-Buscar as dezenas nos sorteios anteriores de modo que identifique o
+agrupamento dos sorteios com o numero de dezenas
+- Agrupar as dezenas em conjunto e verificar a frequencia que saem
+os grupos
+grupo de dezenas que saem juntas
+agrupamento numeros primos
+Grupos ABCDEFGH da planilha loterias
+Combinações da planilha

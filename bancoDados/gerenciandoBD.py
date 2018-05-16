@@ -49,7 +49,10 @@ class ConexaoBD(object):
         self.executaSQL("""
         SELECT * FROM sorteio;
         """)
-
+        result = {}
         for linha in self.direcionador.fetchall():
             a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v = linha
-            print a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v
+            numeros = [c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v]
+            numeros.sort()
+            result[a]= numeros
+        print a,b,numeros

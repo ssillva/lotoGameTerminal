@@ -7,6 +7,8 @@ from dados.downloads import Downloads
 from config.settings import pathdir
 from dados.htmlcsv import html2csv
 from bancoDados.gerenciandoBD import ConexaoBD
+
+
 class Resultados(object):
 	def __init__(self):
 		self.download = Downloads()
@@ -125,6 +127,7 @@ class Resultados(object):
 		self.transfCsvForBd()
 
 	def atualizarResultado(self):
+		print "digite ultimo resultado"
 		pass
 	def setUltimoResultado(self, lista):
 		pass

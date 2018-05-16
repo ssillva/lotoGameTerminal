@@ -12,4 +12,6 @@ class Telas(object):
 	def resultados(self):
 		print "1 - Baixar Resultados do site"
 		print "2 - Salvar em Banco de Dados"
-		print "3 - Sair"
+		print "3 - Atualizar Resultados"
+		print "4 - Digitar último Resultado"
+		print "5 - Sair"
