@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-def id_par(n):
+def id_par_impar(n):
 	return n%2
 def id_mult_quatro(n):
 	return n%4

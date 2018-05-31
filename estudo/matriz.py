@@ -26,4 +26,5 @@ for i in range(0,10,1):
 	for j in range(0, 10, 1):
 		A[i][j] = k
 		k+=1
-print A
+for i in A:
+	print i

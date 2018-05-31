@@ -4,14 +4,14 @@ Projeto incompleto, apenas para testar as análise,
 sem organização
 
 Apostas
-print (" "*10 +"Opções do Sistema")
+Opções do Sistema
 
-print "1 - Resultados"
-print "2 - Estatísticas"
-print "3 - Apostas"
-print "4 - Análises"
+1 - Resultados
+2 - Estatísticas
+3 - Apostas
+4 - Análises
 
-print "\nOpções Resultados\n"
+Opções Resultados
 
 print "1 - Baixar todos resultados da Lotomania" ok
 
