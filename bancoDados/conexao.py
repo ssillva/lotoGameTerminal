@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
-import csv, sqlite3
+import sqlite3
 
 
 class ConexaoBD(object):
@@ -45,14 +45,29 @@ class ConexaoBD(object):
         self.direcionador.execute(sql, lista)
         self.commit_banco()
 
+    def criarResultados(self):
+        self.executaSQL("""
+       	        SELECT * FROM sorteio;
+       	        """)
+        resultados = {}
+        for linha in self.direcionador.fetchall():
+            a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v = linha
+            data_sort, sorteio, numeros = a, b, [c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v]
+            numeros.sort()
+            resultados[a] = [data_sort, sorteio, numeros]
+        return resultados
     def consultarSorteio(self):
         self.executaSQL("""
         SELECT * FROM sorteio;
         """)
-        result = {}
+        resultados = {}
         for linha in self.direcionador.fetchall():
+
             a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v = linha
-            numeros = [c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v]
+            data_sort, sorteio, numeros = a,b,[c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v]
             numeros.sort()
-            result[a]= numeros
-        print a,b,numeros
+            resultados[a]= numeros
+        return resultados, data_sort, sorteio, numeros
+
+if __name__ == '__main__':
+    pass

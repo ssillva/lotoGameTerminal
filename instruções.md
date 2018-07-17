@@ -1,0 +1,2 @@
+- O sistema deve baixar arquivo zip do site da CEF
+- O sistema deve

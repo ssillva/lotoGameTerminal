@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys, os.path, glob, csv
+import sys, os.path, glob, csv, os
 import zipfile
 from dados.downloads import Downloads
 from config.settings import pathdir
 from dados.htmlcsv import html2csv
-from bancoDados.gerenciandoBD import ConexaoBD
+from bancoDados.conexao import ConexaoBD
 
 
 class Resultados(object):
@@ -63,8 +63,9 @@ class Resultados(object):
 				except:
 					pass
 		print 'All done'
-
+	#cria banco de dados
 	def schemaBD(self):
+		os.remove(self.bdArq) if os.path.exists(self.bdArq) else None
 		conexao = ConexaoBD(self.bdArq)
 		sql = 'create table if not exists sorteio ' \
 		           '(concurso integer primary key, ' \
@@ -129,12 +130,25 @@ class Resultados(object):
 	def atualizarResultado(self):
 		print "digite ultimo resultado"
 		pass
+
 	def setUltimoResultado(self, lista):
 		pass
-	def getUltimoResultado(self):
+
+	def getObject(self):
 		conexao = ConexaoBD(self.bdArq)
-		conexao.consultarSorteio()
+		resultados, sorteio, data_sorteio, dezenas = conexao.consultarSorteio()
+		for result in sorted(resultados):
+			print "sorteio = {} dezenas = {}".format(result, sorted(resultados[result]))
 		conexao.fechar_banco()
+
+	def getUltimoResultado(self):
+		import matplotlib.pyplot as plt
+		conexao = ConexaoBD(self.bdArq)
+		resultados, sorteio, data_sorteio, dezenas = conexao.consultarSorteio()
+		for result in sorted(resultados):
+			print "sorteio = {} dezenas = {}".format(result, sorted(resultados[result]))
+		conexao.fechar_banco()
+		print sorteio, data_sorteio, dezenas
 if __name__ == '__main__':
 	teste = Resultados()
 	teste.getUltimoResultado()
