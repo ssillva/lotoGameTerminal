@@ -49,11 +49,12 @@ class ConexaoBD(object):
         self.executaSQL("""
        	        SELECT * FROM sorteio;
        	        """)
-        resultados = {}
+        resultados = {} #armazenar os resultados no dicionario
         for linha in self.direcionador.fetchall():
+            #letra a = data sorteio, letra b = numero sorteio e o restante são as dezenas sorteadas
             a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v = linha
             data_sort, sorteio, numeros = a, b, [c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v]
-            numeros.sort()
+            numeros.sort() #ordenando as dezenas
             resultados[a] = [data_sort, sorteio, numeros]
         return resultados
     def consultarSorteio(self):
@@ -69,5 +70,7 @@ class ConexaoBD(object):
             resultados[a]= numeros
         return resultados, data_sort, sorteio, numeros
 
+    def consultar1Sorteio(self):
+        results = self.criarResultados()
 if __name__ == '__main__':
     pass
